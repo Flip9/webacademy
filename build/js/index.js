@@ -9032,6 +9032,52 @@ module.exports = __webpack_require__(328);
 
 __webpack_require__(329);
 
+function glows(rootElementsLight) {
+    var rootElements = document.querySelector(rootElementsLight);
+    var lamps = rootElements.querySelectorAll('.traffic-light__item');
+    var globalBtn = rootElements.querySelector('.traffic-light__global-btn');
+
+    var isEnabled = false;
+    globalBtn.onclick = onOffAll;
+
+    function onOffAll() {
+        if (!isEnabled) {
+            isEnabled = true;
+            glowsItem(isEnabled);
+            globalBtn.classList.add('on');
+            return isEnabled;
+        } else {
+            isEnabled = false;
+            glowsItem(isEnabled);
+            globalBtn.classList.remove('on');
+            lamps.forEach(function (lamp) {
+                lamp.classList.remove('glows');
+            });
+            return isEnabled;
+        }
+    }
+
+    function glowsItem(isGlows) {
+        lamps.forEach(function (lamp) {
+            var btnGlows = lamp.querySelector('.traffic-light__item-btn');
+            btnGlows.onclick = switchElements;
+
+            function switchElements() {
+                if (isGlows) {
+                    var _glows = rootElements.querySelectorAll('.glows');
+                    _glows.forEach(function (lamps1) {
+                        lamps1.classList.toggle('glows');
+                        console.log(lamps1);
+                    });
+                    lamp.classList.toggle('glows');
+                }
+            }
+        });
+    }
+}
+
+glows('.traffic-light');
+
 /***/ }),
 /* 329 */
 /***/ (function(module, exports) {

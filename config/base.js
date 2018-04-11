@@ -10,21 +10,7 @@ const baseConf = (_path) => {
     const VENDORS_NAME = 'vendors';
     const entry = {
         index: ['babel-polyfill', './src/index/index.js'],
-        'task-1': ['babel-polyfill', './src/task-1/task-1.js'],
-        'task-2': ['babel-polyfill', './src/task-2/task-2.js'],
-        'task-3': ['babel-polyfill', './src/task-3/task-3.js'],
-        'task-4': ['babel-polyfill', './src/task-4/task-4.js'],
-        'task-5': ['babel-polyfill', './src/task-5/task-5.js'],
-        'task-6': ['babel-polyfill', './src/task-6/task-6.js'],
-        'task-7': ['babel-polyfill', './src/task-7/task-7.js'],
-        'task-8': ['babel-polyfill', './src/task-8/task-8.js'],
-        'task-9': ['babel-polyfill', './src/task-9/task-9.js'],
-        'task-10': ['babel-polyfill', './src/task-10/task-10.js'],
-        'task-11': ['babel-polyfill', './src/task-11/task-11.js'],
-        'task-12': ['babel-polyfill', './src/task-12/task-12.js'],
-        'task-13': ['babel-polyfill', './src/task-13/task-13.js'],
-        'task-14': ['babel-polyfill', './src/task-14/task-14.js'],
-        'task-15': ['babel-polyfill', './src/task-15/task-15.js']
+        about: ['babel-polyfill', './src/about/about.js']
     };
 
     const plugins = Object.keys(entry).reduce((acc, name) => {
